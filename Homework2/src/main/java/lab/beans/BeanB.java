@@ -16,10 +16,10 @@ public class BeanB {
     }
 
     public void init() {
-        System.out.println("It is an BeanB init method");
+        System.out.println("This is an BeanB init method");
     }
 
     public void destroy() {
-        System.out.println("It is an BeanB init method");
+        System.out.println("This is an BeanB destroy method");
     }
 }

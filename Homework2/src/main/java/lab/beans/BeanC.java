@@ -15,10 +15,10 @@ public class BeanC {
     }
 
     public void init() {
-        System.out.println("It is an BeanC init method");
+        System.out.println("This is an BeanC init method");
     }
 
     public void destroy() {
-        System.out.println("It is an BeanB init method");
+        System.out.println("This is an BeanC destroy method");
     }
 }
