@@ -1,8 +1,8 @@
 package lab.beans;
 
 public class BeanD {
-    private String name;
-    private String value;
+    private final String name;
+    private final int value;
 
     @Override
     public String toString() {
@@ -11,6 +11,14 @@ public class BeanD {
 
     public BeanD(String name, String value) {
         this.name = name;
-        this.value = value;
+        this.value = Integer.parseInt(value);
+    }
+
+    public void init() {
+        System.out.println("It is an BeanD init method");
+    }
+
+    public void destroy() {
+        System.out.println("It is an BeanB init method");
     }
 }

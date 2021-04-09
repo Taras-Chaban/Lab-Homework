@@ -10,8 +10,4 @@ public class BeanF {
         return "This is " + name + "with value: " + value;
     }
 
-    public BeanF(String name, int value) {
-        this.name = name;
-        this.value = value;
-    }
 }
