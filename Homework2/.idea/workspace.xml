@@ -5,19 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa26e2d2-8a47-4a17-9e43-d3b56fa7c2f0" name="Default Changelist" comment="done 9 task">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lab/beans/BeanFactoryPostProcessorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lab/beans/BeanPostProcessorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lab/beans/Validating.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lab/beans/BeanA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/beans/BeanA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lab/beans/BeanB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/beans/BeanB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lab/beans/BeanC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/beans/BeanC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lab/beans/BeanD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/beans/BeanD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lab/beans/BeanE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/beans/BeanE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab/beans/BeanF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/beans/BeanF.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lab/configurations/Config1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/configurations/Config1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lab/configurations/Config2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/configurations/Config2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Beans.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Beans.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -56,7 +66,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RunManager" selected="Application.Config2">
     <configuration name="BeanA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -132,6 +142,11 @@
       <workItem from="1617886023234" duration="2677000" />
       <workItem from="1617916153855" duration="287000" />
       <workItem from="1617936245725" duration="9579000" />
+      <workItem from="1617990302990" duration="3897000" />
+      <workItem from="1618033592108" duration="519000" />
+      <workItem from="1618034532197" duration="385000" />
+      <workItem from="1618034988339" duration="170000" />
+      <workItem from="1618035198865" duration="2522000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1617607184519</created>

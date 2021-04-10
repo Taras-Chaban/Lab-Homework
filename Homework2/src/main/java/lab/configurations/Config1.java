@@ -1,12 +1,8 @@
 package lab.configurations;
 
-import lab.beans.BeanB;
-import lab.beans.BeanC;
-import lab.beans.BeanD;
-import lab.beans.BeanF;
+import lab.beans.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
-import org.springframework.core.annotation.Order;
 import org.springframework.core.env.Environment;
 
 @Configuration
