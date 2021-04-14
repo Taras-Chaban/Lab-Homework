@@ -1,15 +1,17 @@
 package com.lab.homework04.service.repository.impl;
 
 import com.lab.homework04.service.model.Invoice;
+import com.lab.homework04.service.repository.InvoiceRepository;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-public class InvoiceRepositoryImpl {
+public class InvoiceRepositoryImpl implements InvoiceRepository {
     private final List<Invoice> invoices = new ArrayList<>();
 
+    @Override
     public Invoice getInvoice(Long code) {
         Invoice invoice = invoices.stream()
                 .filter(i -> i.getCode().equals(code))
@@ -19,12 +21,14 @@ public class InvoiceRepositoryImpl {
         return invoice;
     }
 
+    @Override
     public Invoice createInvoice(Invoice invoice) {
         invoices.add(invoice);
         log.info("Created invoice {}", invoice);
         return invoice;
     }
 
+    @Override
     public Invoice updateInvoice(Long code, Invoice invoice) {
         boolean isDeleted = invoices.removeIf(i -> i.getCode().equals(code));
         if (isDeleted) {
@@ -36,6 +40,7 @@ public class InvoiceRepositoryImpl {
         return invoice;
     }
 
+    @Override
     public void deleteInvoice(Long code) {
         boolean isDeleted = invoices.removeIf(i -> i.getCode().equals(code));
         if (isDeleted) {
