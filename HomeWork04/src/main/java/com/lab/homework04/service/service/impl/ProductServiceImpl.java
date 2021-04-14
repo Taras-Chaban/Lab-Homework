@@ -18,7 +18,7 @@ public class ProductServiceImpl implements com.lab.homework04.service.service.Pr
     }
 
     @Override
-    public ProductDto createUser(ProductDto productDto) {
+    public ProductDto createProduct(ProductDto productDto) {
         Product product = productRepository.createProduct(mapProductDtoToProduct(productDto));
         return mapProductToProductDto(product);
     }
