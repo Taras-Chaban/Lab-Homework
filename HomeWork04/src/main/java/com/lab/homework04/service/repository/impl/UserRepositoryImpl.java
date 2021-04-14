@@ -19,18 +19,8 @@ public class UserRepositoryImpl implements UserRepository {
                 .filter(u -> u.getEmail().equals(email))
                 .findFirst()
                 .orElseThrow(RuntimeException::new);
-        log.info("Getting User by email: " + email);
+        log.info("Get User by email: " + email);
         return user;
-    }
-
-    @Override
-    public ArrayList<User> getUsers(int start, int end) {
-        ArrayList<User> users = new ArrayList<>();
-        while (start < end) {
-            users.add(userList.get(start));
-            start++;
-        }
-        return users;
     }
 
     @Override
@@ -53,14 +43,14 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public int getCountOfUsers() {
-        return userList.size();
-    }
-
-    @Override
     public void deleteUser(String email) {
-        userList.removeIf(user -> user.getEmail().equals(email));
-        log.info("User with id " + email + " was deleted");
+        boolean isDeleted = userList.removeIf(user -> user.getEmail().equals(email));
+        if (!isDeleted) {
+            log.info("User with email {} does not exist", email);
+            throw new RuntimeException("User does not exist");
+        } else {
+            log.info("User with email {} was deleted", email);
+        }
     }
 
 

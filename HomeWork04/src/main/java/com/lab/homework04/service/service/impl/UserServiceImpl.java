@@ -7,8 +7,6 @@ import com.lab.homework04.service.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -18,17 +16,6 @@ public class UserServiceImpl implements UserService {
     public UserDto getUser(String email) {
         User user = userRepository.getUser(email);
         return mapUserToUserDto(user);
-    }
-
-    @Override
-    public ArrayList<UserDto> getUsers(int start, int end) {
-        ArrayList<UserDto> usersDto = new ArrayList<>();
-
-        for (User user : userRepository.getUsers(start, end)) {
-            usersDto.add(mapUserToUserDto(user));
-        }
-
-        return usersDto;
     }
 
     @Override
@@ -47,12 +34,6 @@ public class UserServiceImpl implements UserService {
     public void deleteUser(String email) {
         userRepository.deleteUser(email);
     }
-
-    @Override
-    public int getCuntOfUsers() {
-        return userRepository.getCountOfUsers();
-    }
-
 
     private UserDto mapUserToUserDto(User user) {
         return UserDto.builder()
