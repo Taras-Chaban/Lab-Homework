@@ -3,12 +3,13 @@ package com.lab.homework04.service.service.impl;
 import com.lab.homework04.service.dto.ProductDto;
 import com.lab.homework04.service.model.Product;
 import com.lab.homework04.service.repository.ProductRepository;
+import com.lab.homework04.service.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class ProductServiceImpl implements com.lab.homework04.service.service.ProductService {
+public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
 
     @Override

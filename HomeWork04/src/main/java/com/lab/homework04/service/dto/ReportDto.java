@@ -1,4 +1,4 @@
-package com.lab.homework04.service.model;
+package com.lab.homework04.service.dto;
 
 import lombok.Builder;
 import lombok.Data;
@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 
 @Data
 @Builder
-public class Report {
+public class ReportDto {
     private String reportType;
     private Timestamp date;
     private Integer cashBefore;

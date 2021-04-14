@@ -10,7 +10,7 @@ import java.util.List;
 
 @Slf4j
 public class ProductRepositoryImpl implements ProductRepository {
-    private List<Product> productList = new ArrayList<>();
+    private final List<Product> productList = new ArrayList<>();
 
     @Override
     public Product getProduct(String code) {
