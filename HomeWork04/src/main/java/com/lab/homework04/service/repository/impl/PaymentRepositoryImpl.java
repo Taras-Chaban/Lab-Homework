@@ -3,11 +3,13 @@ package com.lab.homework04.service.repository.impl;
 import com.lab.homework04.service.model.Payment;
 import com.lab.homework04.service.repository.PaymentRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
+@Component
 public class PaymentRepositoryImpl implements PaymentRepository {
     private final List<Payment> paymentList = new ArrayList<>();
 

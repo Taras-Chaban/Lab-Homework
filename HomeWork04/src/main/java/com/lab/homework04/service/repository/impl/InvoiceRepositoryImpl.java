@@ -3,11 +3,13 @@ package com.lab.homework04.service.repository.impl;
 import com.lab.homework04.service.model.Invoice;
 import com.lab.homework04.service.repository.InvoiceRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
+@Component
 public class InvoiceRepositoryImpl implements InvoiceRepository {
     private final List<Invoice> invoices = new ArrayList<>();
 

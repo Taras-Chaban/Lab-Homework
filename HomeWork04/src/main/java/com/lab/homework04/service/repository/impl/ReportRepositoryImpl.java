@@ -3,12 +3,14 @@ package com.lab.homework04.service.repository.impl;
 import com.lab.homework04.service.model.Report;
 import com.lab.homework04.service.repository.ReportRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
+@Component
 public class ReportRepositoryImpl implements ReportRepository {
     private final List<Report> reportList = new ArrayList<>();
 

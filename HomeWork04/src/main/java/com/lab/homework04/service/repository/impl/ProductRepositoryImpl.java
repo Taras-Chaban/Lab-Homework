@@ -4,11 +4,13 @@ package com.lab.homework04.service.repository.impl;
 import com.lab.homework04.service.model.Product;
 import com.lab.homework04.service.repository.ProductRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
+@Component
 public class ProductRepositoryImpl implements ProductRepository {
     private final List<Product> productList = new ArrayList<>();
 
