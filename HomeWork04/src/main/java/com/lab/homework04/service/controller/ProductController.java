@@ -18,28 +18,28 @@ public class ProductController {
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(value = "/{code}")
     public ProductDto getProduct(@PathVariable String code) {
-        log.info("Getting product with code{}", code);
+        log.info("Getting product with code {}", code);
         return productService.getUser(code);
     }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public ProductDto createProduct(@RequestBody ProductDto productDto) {
-        log.info("Creating product{}", productDto);
+        log.info("Creating product {}", productDto);
         return productService.createProduct(productDto);
     }
 
     @ResponseStatus(HttpStatus.OK)
     @PutMapping(value = "/{code}")
     public ProductDto updateProduct(@PathVariable String code, @RequestParam ProductDto productDto) {
-        log.info("Updating product with code{}", code);
+        log.info("Updating product with code {}", code);
         return productService.updateProduct(code, productDto);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping(value = "/{code}")
     public ResponseEntity<Void> deleteProduct(@PathVariable String code) {
-        log.info("Deleting Product with code{}", code);
+        log.info("Deleting Product with code {}", code);
         productService.deleteProduct(code);
         return ResponseEntity.noContent().build();
     }
