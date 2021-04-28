@@ -15,4 +15,5 @@ public class ServiceException extends RuntimeException {
     public ErrorType getErrorType() {
         return errorType;
     }
+
 }
