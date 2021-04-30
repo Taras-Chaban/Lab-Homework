@@ -1,5 +1,6 @@
 package com.lab.homework5.service.repository.impl;
 
+import com.lab.homework5.service.exception.UserNotFoundException;
 import com.lab.homework5.service.model.User;
 import com.lab.homework5.service.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +19,7 @@ public class UserRepositoryImpl implements UserRepository {
         User user = userList.stream()
                 .filter(u -> u.getEmail().equals(email))
                 .findFirst()
-                .orElseThrow(RuntimeException::new);
+                .orElseThrow(UserNotFoundException::new);
         log.info("Get User by email: " + email);
         return user;
     }

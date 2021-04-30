@@ -1,6 +1,7 @@
 package com.lab.homework5.service.controller;
 
 import com.lab.homework5.service.exception.UserNotFoundException;
+import com.lab.homework5.service.model.Error;
 import com.lab.homework5.service.model.enums.ErrorType;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -15,9 +16,9 @@ import java.time.LocalDateTime;
 public class ErrorHandlingController {
 
     @ExceptionHandler(UserNotFoundException.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
     public Error handleUserNotFoundException(UserNotFoundException exception) {
-        return new Error();
+        return new Error(exception.getMessage(), ErrorType.DATABASE_ERROR_TYPE, LocalDateTime.now());
     }
 
 
