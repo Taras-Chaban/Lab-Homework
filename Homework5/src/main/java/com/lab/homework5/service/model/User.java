@@ -1,4 +1,4 @@
-package com.lab.homework04.service.model;
+package com.lab.homework5.service.model;
 
 import lombok.Builder;
 import lombok.Data;

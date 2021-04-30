@@ -1,4 +1,4 @@
-package com.lab.homework04.service.dto;
+package com.lab.homework5.service.dto;
 
 import lombok.Builder;
 import lombok.Data;
@@ -8,6 +8,7 @@ import javax.validation.constraints.*;
 @Data
 @Builder
 public class UserDto {
+    private Long id;
     @NotNull
     @Size(min = 4)
     private String name;

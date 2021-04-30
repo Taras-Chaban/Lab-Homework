@@ -1,6 +1,6 @@
-package com.lab.homework04.service.repository;
+package com.lab.homework5.service.repository;
 
-import com.lab.homework04.service.model.Product;
+import com.lab.homework5.service.model.Product;
 
 public interface ProductRepository {
     Product getProduct(String code);

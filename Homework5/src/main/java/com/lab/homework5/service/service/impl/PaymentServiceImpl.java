@@ -1,9 +1,9 @@
-package com.lab.homework04.service.service.impl;
+package com.lab.homework5.service.service.impl;
 
-import com.lab.homework04.service.dto.PaymentDto;
-import com.lab.homework04.service.model.Payment;
-import com.lab.homework04.service.repository.impl.PaymentRepositoryImpl;
-import com.lab.homework04.service.service.PaymentService;
+import com.lab.homework5.service.dto.PaymentDto;
+import com.lab.homework5.service.model.Payment;
+import com.lab.homework5.service.repository.impl.PaymentRepositoryImpl;
+import com.lab.homework5.service.service.PaymentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

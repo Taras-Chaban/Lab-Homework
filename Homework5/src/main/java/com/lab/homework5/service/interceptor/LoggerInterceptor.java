@@ -1,4 +1,4 @@
-package com.lab.homework04.service.interceptor;
+package com.lab.homework5.service.interceptor;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;

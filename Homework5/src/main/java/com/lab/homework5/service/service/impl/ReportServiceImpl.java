@@ -1,9 +1,9 @@
-package com.lab.homework04.service.service.impl;
+package com.lab.homework5.service.service.impl;
 
-import com.lab.homework04.service.dto.ReportDto;
-import com.lab.homework04.service.model.Report;
-import com.lab.homework04.service.repository.impl.ReportRepositoryImpl;
-import com.lab.homework04.service.service.ReportService;
+import com.lab.homework5.service.dto.ReportDto;
+import com.lab.homework5.service.model.Report;
+import com.lab.homework5.service.repository.impl.ReportRepositoryImpl;
+import com.lab.homework5.service.service.ReportService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

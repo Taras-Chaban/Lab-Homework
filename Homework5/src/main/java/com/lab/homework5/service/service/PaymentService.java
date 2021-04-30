@@ -1,6 +1,6 @@
-package com.lab.homework04.service.service;
+package com.lab.homework5.service.service;
 
-import com.lab.homework04.service.dto.PaymentDto;
+import com.lab.homework5.service.dto.PaymentDto;
 
 public interface PaymentService {
     PaymentDto getPayment(String productCode);

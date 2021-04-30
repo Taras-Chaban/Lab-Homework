@@ -1,6 +1,6 @@
-package com.lab.homework04.service.service;
+package com.lab.homework5.service.service;
 
-import com.lab.homework04.service.dto.UserDto;
+import com.lab.homework5.service.dto.UserDto;
 
 public interface UserService {
     UserDto getUser(String email);

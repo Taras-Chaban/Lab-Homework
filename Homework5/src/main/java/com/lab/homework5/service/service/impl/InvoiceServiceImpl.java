@@ -1,14 +1,15 @@
-package com.lab.homework04.service.service.impl;
+package com.lab.homework5.service.service.impl;
 
-import com.lab.homework04.service.dto.InvoiceDto;
-import com.lab.homework04.service.model.Invoice;
-import com.lab.homework04.service.repository.impl.InvoiceRepositoryImpl;
+import com.lab.homework5.service.dto.InvoiceDto;
+import com.lab.homework5.service.model.Invoice;
+import com.lab.homework5.service.repository.impl.InvoiceRepositoryImpl;
+import com.lab.homework5.service.service.InvoiceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class InvoiceServiceImpl implements com.lab.homework04.service.service.InvoiceService {
+public class InvoiceServiceImpl implements InvoiceService {
     private final InvoiceRepositoryImpl invoiceRepository;
 
     @Override

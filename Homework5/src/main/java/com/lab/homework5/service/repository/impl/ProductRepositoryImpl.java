@@ -1,8 +1,8 @@
-package com.lab.homework04.service.repository.impl;
+package com.lab.homework5.service.repository.impl;
 
 
-import com.lab.homework04.service.model.Product;
-import com.lab.homework04.service.repository.ProductRepository;
+import com.lab.homework5.service.model.Product;
+import com.lab.homework5.service.repository.ProductRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

@@ -1,6 +1,6 @@
-package com.lab.homework04.service.model.enums;
+package com.lab.homework5.service.model.enums;
 
-import com.lab.homework04.service.model.User;
+import com.lab.homework5.service.model.User;
 
 public enum Role {
     USER,

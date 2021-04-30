@@ -1,4 +1,4 @@
-package com.lab.homework04.service.dto;
+package com.lab.homework5.service.dto;
 
 import lombok.Builder;
 import lombok.Data;

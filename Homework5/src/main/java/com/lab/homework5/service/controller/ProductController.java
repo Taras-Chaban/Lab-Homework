@@ -1,7 +1,7 @@
-package com.lab.homework04.service.controller;
+package com.lab.homework5.service.controller;
 
-import com.lab.homework04.service.dto.ProductDto;
-import com.lab.homework04.service.service.impl.ProductServiceImpl;
+import com.lab.homework5.service.dto.ProductDto;
+import com.lab.homework5.service.service.impl.ProductServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

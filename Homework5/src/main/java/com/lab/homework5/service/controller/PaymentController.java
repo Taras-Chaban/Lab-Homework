@@ -1,8 +1,8 @@
-package com.lab.homework04.service.controller;
+package com.lab.homework5.service.controller;
 
 
-import com.lab.homework04.service.dto.PaymentDto;
-import com.lab.homework04.service.service.impl.PaymentServiceImpl;
+import com.lab.homework5.service.dto.PaymentDto;
+import com.lab.homework5.service.service.impl.PaymentServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

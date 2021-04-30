@@ -1,6 +1,6 @@
-package com.lab.homework04.service.repository;
+package com.lab.homework5.service.repository;
 
-import com.lab.homework04.service.model.Report;
+import com.lab.homework5.service.model.Report;
 
 import java.sql.Timestamp;
 
