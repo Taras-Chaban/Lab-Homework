@@ -1,5 +1,7 @@
 package com.lab.homework5.service.controller;
 
+import com.lab.homework5.service.controller.assembler.UserAssembler;
+import com.lab.homework5.service.controller.model.UserModel;
 import com.lab.homework5.service.dto.UserDto;
 import com.lab.homework5.service.service.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
@@ -15,26 +17,30 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class UserController {
     private final UserServiceImpl userService;
+    private final UserAssembler userAssembler;
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(value = "/{email}")
-    public UserDto getUser(@PathVariable String email) {
+    public UserModel getUser(@PathVariable String email) {
         log.info("Getting user with email{}", email);
-        return userService.getUser(email);
+        UserDto userDto = userService.getUser(email);
+        return userAssembler.toModel(userDto);
     }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public UserDto createUser(@RequestBody UserDto userDto) {
+    public UserModel createUser(@RequestBody UserDto userDto) {
         log.info("creating user{}", userDto);
-        return userService.createUser(userDto);
+        UserDto user =  userService.createUser(userDto);
+        return userAssembler.toModel(user);
     }
 
     @ResponseStatus(HttpStatus.OK)
     @PutMapping(value = "/{email}")
-    public UserDto updateUser(@PathVariable String email, @RequestParam UserDto userDto) {
+    public UserModel updateUser(@PathVariable String email, @RequestParam UserDto userDto) {
         log.info("Updating user with email{}", email);
-        return userService.updateUser(email, userDto);
+        UserDto user = userService.updateUser(email, userDto);
+        return userAssembler.toModel(user);
     }
 
     @DeleteMapping(value = "/{email}")

@@ -22,11 +22,10 @@ public class UserAssembler extends RepresentationModelAssemblerSupport<UserDto, 
         UserModel userModel = new UserModel(entity);
 
         Link get = linkTo(methodOn(UserController.class).getUser(entity.getEmail())).withRel("get");
-        Link delete = linkTo(methodOn(UserController.class).getUser(entity.getEmail())).withRel("delete");
         Link update = linkTo(methodOn(UserController.class).getUser(entity.getEmail())).withRel("update");
         Link create = linkTo(methodOn(UserController.class).getUser(entity.getEmail())).withRel("create");
 
-        userModel.add(get, delete, update, create);
+        userModel.add(get, update, create);
 
         return userModel;
     }
