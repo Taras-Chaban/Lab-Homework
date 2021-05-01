@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
-@RequestMapping(value = "/users")
 @RequiredArgsConstructor
+@RequestMapping("/api/v1/users")
 public class UserController {
     private final UserServiceImpl userService;
     private final UserAssembler userAssembler;
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/{email}")
+    @RequestMapping(value = "/{email}", method = RequestMethod.GET)
     public UserModel getUser(@PathVariable String email) {
         log.info("Getting user with email{}", email);
         UserDto userDto = userService.getUser(email);
@@ -36,17 +36,17 @@ public class UserController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @PutMapping(value = "/{email}")
-    public UserModel updateUser(@PathVariable String email, @RequestParam UserDto userDto) {
-        log.info("Updating user with email{}", email);
-        UserDto user = userService.updateUser(email, userDto);
+    @PutMapping(value = "/{emailUp}")
+    public UserModel updateUser(@PathVariable String emailUp, @RequestParam UserDto userDto) {
+        log.info("Updating user with email{}", emailUp);
+        UserDto user = userService.updateUser(emailUp, userDto);
         return userAssembler.toModel(user);
     }
 
-    @DeleteMapping(value = "/{email}")
-    public ResponseEntity<Void> deleteUser(@PathVariable String email) {
-        log.info("Deleting user with emil{}", email);
-        userService.deleteUser(email);
+    @DeleteMapping(value = "/{emailDel}")
+    public ResponseEntity<Void> deleteUser(@PathVariable String emailDel) {
+        log.info("Deleting user with email{}", emailDel);
+        userService.deleteUser(emailDel);
         return ResponseEntity.noContent().build();
     }
 }

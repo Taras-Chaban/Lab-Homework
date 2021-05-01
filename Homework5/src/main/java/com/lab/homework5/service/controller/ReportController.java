@@ -12,7 +12,7 @@ import java.sql.Timestamp;
 
 @Slf4j
 @RestController
-@RequestMapping(value = "/reports")
+@RequestMapping(value = "/api/v1/reports")
 @RequiredArgsConstructor
 public class ReportController {
     private final ReportServiceImpl reportService;

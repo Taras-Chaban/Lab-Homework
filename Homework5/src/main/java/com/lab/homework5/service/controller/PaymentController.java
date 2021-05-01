@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
-@RequestMapping(value = "/{payments}")
+@RequestMapping(value = "/api/v1/payments")
 @RequiredArgsConstructor
 public class PaymentController {
     private final PaymentServiceImpl paymentService;
