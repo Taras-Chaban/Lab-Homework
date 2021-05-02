@@ -1,6 +1,8 @@
 package com.lab.homework5.service.controller;
 
 import com.lab.homework5.service.api.ReportApi;
+import com.lab.homework5.service.controller.assembler.ReportAssembler;
+import com.lab.homework5.service.controller.model.ReportModel;
 import com.lab.homework5.service.dto.ReportDto;
 import com.lab.homework5.service.service.impl.ReportServiceImpl;
 import lombok.RequiredArgsConstructor;
@@ -16,17 +18,20 @@ import java.sql.Timestamp;
 @RequiredArgsConstructor
 public class ReportController implements ReportApi {
     private final ReportServiceImpl reportService;
+    private final ReportAssembler reportAssembler;
 
     @Override
-    public ReportDto getReport(Timestamp time) {
+    public ReportModel getReport(Timestamp time) {
         log.info("Getting report with time {}", time);
-        return reportService.getReport(time);
+        ReportDto reportDto = reportService.getReport(time);
+        return reportAssembler.toModel(reportDto);
     }
 
     @Override
-    public ReportDto createReport(ReportDto reportDto) {
+    public ReportModel createReport(ReportDto reportDto) {
         log.info("Creating report {}", reportDto);
-        return reportService.createReport(reportDto);
+        ReportDto resultReportDto = reportService.createReport(reportDto);
+        return reportAssembler.toModel(resultReportDto);
     }
 
     @Override
