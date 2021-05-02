@@ -13,33 +13,29 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(value = "/api/v1/payments")
 @RequiredArgsConstructor
-public class PaymentController {
+public class PaymentController implements com.lab.homework5.service.api.PaymentApi {
     private final PaymentServiceImpl paymentService;
 
-    @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/{productCode}")
-    public PaymentDto getPayment(@PathVariable String productCode) {
+    @Override
+    public PaymentDto getPayment(String productCode) {
         log.info("Getting payment with productCode {}", productCode);
         return paymentService.getPayment(productCode);
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping
-    public PaymentDto createPayment(@RequestBody PaymentDto paymentDto) {
+    @Override
+    public PaymentDto createPayment(PaymentDto paymentDto) {
         log.info("Creating payment {}", paymentDto);
         return paymentService.createPayment(paymentDto);
     }
 
-    @ResponseStatus(HttpStatus.OK)
-    @PutMapping(value = "/{productCode}")
-    public PaymentDto updatePayment(@PathVariable String productCode, @RequestParam PaymentDto paymentDto) {
+    @Override
+    public PaymentDto updatePayment(String productCode, PaymentDto paymentDto) {
         log.info("Updating payment with productCode {}", productCode);
         return paymentService.updatePayment(productCode, paymentDto);
     }
 
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping(value = "/{productCode}")
-    public ResponseEntity<Void> deletePayment(@PathVariable String productCode) {
+    @Override
+    public ResponseEntity<Void> deletePayment(String productCode) {
         paymentService.deletePayment(productCode);
         return ResponseEntity.noContent().build();
     }
