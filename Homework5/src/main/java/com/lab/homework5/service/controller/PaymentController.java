@@ -2,6 +2,8 @@ package com.lab.homework5.service.controller;
 
 
 import com.lab.homework5.service.api.PaymentApi;
+import com.lab.homework5.service.controller.assembler.PaymentAssembler;
+import com.lab.homework5.service.controller.model.PaymentModel;
 import com.lab.homework5.service.dto.PaymentDto;
 import com.lab.homework5.service.service.impl.PaymentServiceImpl;
 import lombok.RequiredArgsConstructor;
@@ -15,23 +17,27 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class PaymentController implements PaymentApi {
     private final PaymentServiceImpl paymentService;
+    private final PaymentAssembler paymentAssembler;
 
     @Override
-    public PaymentDto getPayment(String productCode) {
+    public PaymentModel getPayment(String productCode) {
         log.info("Getting payment with productCode {}", productCode);
-        return paymentService.getPayment(productCode);
+        PaymentDto paymentDto = paymentService.getPayment(productCode);
+        return paymentAssembler.toModel(paymentDto);
     }
 
     @Override
-    public PaymentDto createPayment(PaymentDto paymentDto) {
+    public PaymentModel createPayment(PaymentDto paymentDto) {
         log.info("Creating payment {}", paymentDto);
-        return paymentService.createPayment(paymentDto);
+        PaymentDto resultPaymentDto = paymentService.createPayment(paymentDto);
+        return paymentAssembler.toModel(resultPaymentDto);
     }
 
     @Override
-    public PaymentDto updatePayment(String productCode, PaymentDto paymentDto) {
+    public PaymentModel updatePayment(String productCode, PaymentDto paymentDto) {
         log.info("Updating payment with productCode {}", productCode);
-        return paymentService.updatePayment(productCode, paymentDto);
+        PaymentDto resultPaymentDto = paymentService.updatePayment(productCode, paymentDto);
+        return paymentAssembler.toModel(resultPaymentDto);
     }
 
     @Override
