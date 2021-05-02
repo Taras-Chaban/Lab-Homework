@@ -17,7 +17,7 @@ public interface UserApi {
 
     @ResponseStatus(HttpStatus.OK)
     @PutMapping(value = "/{emailUp}")
-    UserModel updateUser(@PathVariable String emailUp, @RequestParam UserDto userDto);
+    UserModel updateUser(@PathVariable String emailUp, @RequestBody UserDto userDto);
 
     @DeleteMapping(value = "/{emailDel}")
     ResponseEntity<Void> deleteUser(@PathVariable String emailDel);
