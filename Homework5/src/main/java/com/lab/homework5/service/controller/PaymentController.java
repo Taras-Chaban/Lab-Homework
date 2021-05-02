@@ -1,11 +1,11 @@
 package com.lab.homework5.service.controller;
 
 
+import com.lab.homework5.service.api.PaymentApi;
 import com.lab.homework5.service.dto.PaymentDto;
 import com.lab.homework5.service.service.impl.PaymentServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(value = "/api/v1/payments")
 @RequiredArgsConstructor
-public class PaymentController implements com.lab.homework5.service.api.PaymentApi {
+public class PaymentController implements PaymentApi {
     private final PaymentServiceImpl paymentService;
 
     @Override

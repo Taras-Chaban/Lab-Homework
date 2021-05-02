@@ -1,5 +1,6 @@
 package com.lab.homework5.service.controller;
 
+import com.lab.homework5.service.api.ReportApi;
 import com.lab.homework5.service.dto.ReportDto;
 import com.lab.homework5.service.service.impl.ReportServiceImpl;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +14,7 @@ import java.sql.Timestamp;
 @RestController
 @RequestMapping(value = "/api/v1/reports")
 @RequiredArgsConstructor
-public class ReportController implements com.lab.homework5.service.api.ReportApi {
+public class ReportController implements ReportApi {
     private final ReportServiceImpl reportService;
 
     @Override

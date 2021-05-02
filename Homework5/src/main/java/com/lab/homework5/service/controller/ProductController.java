@@ -1,5 +1,6 @@
 package com.lab.homework5.service.controller;
 
+import com.lab.homework5.service.api.ProductApi;
 import com.lab.homework5.service.dto.ProductDto;
 import com.lab.homework5.service.service.impl.ProductServiceImpl;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(value = "/api/v1/products")
 @RequiredArgsConstructor
-public class ProductController implements com.lab.homework5.service.api.ProductApi {
+public class ProductController implements ProductApi {
     private final ProductServiceImpl productService;
 
     @Override

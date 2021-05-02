@@ -1,5 +1,6 @@
 package com.lab.homework5.service.controller;
 
+import com.lab.homework5.service.api.InvoiceApi;
 import com.lab.homework5.service.dto.InvoiceDto;
 import com.lab.homework5.service.service.impl.InvoiceServiceImpl;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(value = "/api/v1/invoices")
 @RequiredArgsConstructor
-public class InvoiceController implements com.lab.homework5.service.api.InvoiceApi {
+public class InvoiceController implements InvoiceApi {
     private final InvoiceServiceImpl invoiceService;
 
     @Override
