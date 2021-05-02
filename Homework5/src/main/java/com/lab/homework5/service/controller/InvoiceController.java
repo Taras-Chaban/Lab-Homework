@@ -12,33 +12,29 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(value = "/api/v1/invoices")
 @RequiredArgsConstructor
-public class InvoiceController {
+public class InvoiceController implements com.lab.homework5.service.api.InvoiceApi {
     private final InvoiceServiceImpl invoiceService;
 
-    @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/{code}")
-    public InvoiceDto getInvoice(@PathVariable Long code) {
+    @Override
+    public InvoiceDto getInvoice(Long code) {
         log.info("Getting invoice with code {}", code);
         return invoiceService.getInvoice(code);
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping
-    public InvoiceDto createInvoice(@RequestBody InvoiceDto invoiceDto) {
+    @Override
+    public InvoiceDto createInvoice(InvoiceDto invoiceDto) {
         log.info("Creating invoice {}", invoiceDto);
         return invoiceService.createInvoice(invoiceDto);
     }
 
-    @ResponseStatus(HttpStatus.OK)
-    @PutMapping(value = "/{code}")
-    public InvoiceDto updateInvoice(@PathVariable Long code, @RequestParam InvoiceDto invoiceDto) {
+    @Override
+    public InvoiceDto updateInvoice(Long code, InvoiceDto invoiceDto) {
         log.info("Updating invoice with code {}", code);
         return invoiceService.updateInvoice(code, invoiceDto);
     }
 
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping(value = "/{code}")
-    public ResponseEntity<Void> deleteInvoice(@PathVariable Long code) {
+    @Override
+    public ResponseEntity<Void> deleteInvoice(Long code) {
         log.info("Deleting invoice with code {}", code);
         invoiceService.deleteInvoice(code);
         return ResponseEntity.noContent().build();
