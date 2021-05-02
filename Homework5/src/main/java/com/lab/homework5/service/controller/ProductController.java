@@ -4,7 +4,6 @@ import com.lab.homework5.service.dto.ProductDto;
 import com.lab.homework5.service.service.impl.ProductServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,33 +11,29 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(value = "/api/v1/products")
 @RequiredArgsConstructor
-public class ProductController {
+public class ProductController implements com.lab.homework5.service.api.ProductApi {
     private final ProductServiceImpl productService;
 
-    @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/{code}")
-    public ProductDto getProduct(@PathVariable String code) {
+    @Override
+    public ProductDto getProduct(String code) {
         log.info("Getting product with code {}", code);
         return productService.getUser(code);
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping
-    public ProductDto createProduct(@RequestBody ProductDto productDto) {
+    @Override
+    public ProductDto createProduct(ProductDto productDto) {
         log.info("Creating product {}", productDto);
         return productService.createProduct(productDto);
     }
 
-    @ResponseStatus(HttpStatus.OK)
-    @PutMapping(value = "/{code}")
-    public ProductDto updateProduct(@PathVariable String code, @RequestParam ProductDto productDto) {
+    @Override
+    public ProductDto updateProduct(String code, ProductDto productDto) {
         log.info("Updating product with code {}", code);
         return productService.updateProduct(code, productDto);
     }
 
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping(value = "/{code}")
-    public ResponseEntity<Void> deleteProduct(@PathVariable String code) {
+    @Override
+    public ResponseEntity<Void> deleteProduct(String code) {
         log.info("Deleting Product with code {}", code);
         productService.deleteProduct(code);
         return ResponseEntity.noContent().build();
