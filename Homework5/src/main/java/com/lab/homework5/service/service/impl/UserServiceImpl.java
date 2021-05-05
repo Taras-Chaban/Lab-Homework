@@ -43,6 +43,7 @@ public class UserServiceImpl implements UserService {
                 .email(user.getEmail())
                 .address(user.getAddress())
                 .role(user.getRole())
+                .password(user.getPassword())
                 .build();
     }
 

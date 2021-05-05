@@ -30,4 +30,5 @@ public class UserAssembler extends RepresentationModelAssemblerSupport<UserDto, 
 
         return userModel;
     }
+
 }
