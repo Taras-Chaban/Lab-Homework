@@ -1,5 +1,6 @@
 package com.lab.homework5.service.repository.impl;
 
+import com.lab.homework5.service.exception.InvoiceNotFoundException;
 import com.lab.homework5.service.model.Invoice;
 import com.lab.homework5.service.repository.InvoiceRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +19,7 @@ public class InvoiceRepositoryImpl implements InvoiceRepository {
         Invoice invoice = invoices.stream()
                 .filter(i -> i.getCode().equals(code))
                 .findFirst()
-                .orElseThrow(RuntimeException::new);
+                .orElseThrow(InvoiceNotFoundException::new);
         log.info("Get invoice {}", invoice);
         return invoice;
     }

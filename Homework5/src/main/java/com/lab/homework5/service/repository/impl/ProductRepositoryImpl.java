@@ -1,6 +1,7 @@
 package com.lab.homework5.service.repository.impl;
 
 
+import com.lab.homework5.service.exception.ProductNotFoundException;
 import com.lab.homework5.service.model.Product;
 import com.lab.homework5.service.repository.ProductRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +20,7 @@ public class ProductRepositoryImpl implements ProductRepository {
         Product product = productList.stream()
                 .filter(p -> p.getCode().equals(code))
                 .findFirst()
-                .orElseThrow(RuntimeException::new);
+                .orElseThrow(ProductNotFoundException::new);
         log.info("Get Product by code{} ", code);
         return product;
     }

@@ -1,5 +1,6 @@
 package com.lab.homework5.service.repository.impl;
 
+import com.lab.homework5.service.exception.ReportNotFoundException;
 import com.lab.homework5.service.model.Report;
 import com.lab.homework5.service.repository.ReportRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +20,7 @@ public class ReportRepositoryImpl implements ReportRepository {
         Report resultReport = reportList.stream()
                 .filter(report -> report.getDate().equals(time))
                 .findFirst()
-                .orElseThrow(RuntimeException::new);
+                .orElseThrow(ReportNotFoundException::new);
         log.info("Get report {}", time);
         return resultReport;
     }

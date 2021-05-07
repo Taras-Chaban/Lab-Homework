@@ -1,5 +1,6 @@
 package com.lab.homework5.service.repository.impl;
 
+import com.lab.homework5.service.exception.PaymentNotFoundException;
 import com.lab.homework5.service.model.Payment;
 import com.lab.homework5.service.repository.PaymentRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +19,7 @@ public class PaymentRepositoryImpl implements PaymentRepository {
         Payment resultPayment = paymentList.stream()
                 .filter(payment -> payment.getProductCode().equals(productCode))
                 .findFirst()
-                .orElseThrow(RuntimeException::new);
+                .orElseThrow(PaymentNotFoundException::new);
         log.info("Got payment {}", resultPayment);
         return resultPayment;
     }
