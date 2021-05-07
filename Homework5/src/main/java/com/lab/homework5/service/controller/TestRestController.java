@@ -28,4 +28,10 @@ public class TestRestController {
         return restTemplate.postForObject(url, userDto, UserModel.class);
     }
 
+    @ResponseStatus(HttpStatus.OK)
+    @PutMapping(value = "/{emailUp}")
+    public void updateUser(@PathVariable String emailUp, @RequestBody UserDto userDto) {
+        String url = "http://localhost:8080/api/v1/users/" + emailUp;
+        restTemplate.put(url, userDto, emailUp);
+    }
 }
