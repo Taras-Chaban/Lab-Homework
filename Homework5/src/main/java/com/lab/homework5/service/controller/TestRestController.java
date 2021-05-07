@@ -4,6 +4,7 @@ import com.lab.homework5.service.controller.model.UserModel;
 import com.lab.homework5.service.dto.UserDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -30,8 +31,17 @@ public class TestRestController {
 
     @ResponseStatus(HttpStatus.OK)
     @PutMapping(value = "/{emailUp}")
-    public void updateUser(@PathVariable String emailUp, @RequestBody UserDto userDto) {
+    public ResponseEntity<Void> updateUser(@PathVariable String emailUp, @RequestBody UserDto userDto) {
         String url = "http://localhost:8080/api/v1/users/" + emailUp;
         restTemplate.put(url, userDto, emailUp);
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping(value = "/{emailDel}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public ResponseEntity<Void> deleteUser(@PathVariable String emailDel) {
+        String url = "http://localhost:8080/api/v1/users/" + emailDel;
+        restTemplate.delete(url, emailDel);
+        return ResponseEntity.noContent().build();
     }
 }
