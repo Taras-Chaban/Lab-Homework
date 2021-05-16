@@ -21,7 +21,7 @@ public class UserController implements UserApi {
 
     @Override
     public UserModel getUser(String email) {
-        log.info("Getting user with email{}", email);
+        log.info("Getting user with email: {}", email);
         UserDto userDto = userService.getUser(email);
         return userAssembler.toModel(userDto);
     }
