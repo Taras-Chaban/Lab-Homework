@@ -8,6 +8,7 @@ public enum Role {
     SENIOR_CASHIER,
     MERCHANT,
     ADMIN;
+
     public static Role getRole(User user) {
         return Role.values()[user.getRole()];
     }

@@ -5,5 +5,5 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Order(3)
-public class Tower implements Building{
+public class Tower implements Building {
 }

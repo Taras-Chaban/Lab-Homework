@@ -29,7 +29,7 @@ public class UserController implements UserApi {
     @Override
     public UserModel createUser(UserDto userDto) {
         log.info("creating user{}", userDto);
-        UserDto user =  userService.createUser(userDto);
+        UserDto user = userService.createUser(userDto);
         return userAssembler.toModel(user);
     }
 

@@ -18,12 +18,15 @@ public class BuildingsList {
     public Building getCottage() {
         return cottage;
     }
+
     public Building getHouse() {
         return house;
     }
+
     public Building getTower() {
         return tower;
     }
+
     public Building getWarehouse() {
         return warehouse;
     }

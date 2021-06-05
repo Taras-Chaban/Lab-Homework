@@ -7,7 +7,7 @@ import org.springframework.context.annotation.FilterType;
 @Configuration
 @ComponentScan(
         basePackages = {"lab.beans2", "lab.beans3"},
-        excludeFilters =  {
+        excludeFilters = {
                 @ComponentScan.Filter(type = FilterType.REGEX, pattern = ".*Bean[^DF]")
         }
 )

@@ -1,6 +1,7 @@
 package com.lab.homework5.service.model;
 
 import com.lab.homework5.service.model.enums.ErrorType;
+
 import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
