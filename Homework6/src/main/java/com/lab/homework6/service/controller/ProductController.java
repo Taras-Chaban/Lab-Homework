@@ -18,7 +18,7 @@ public class ProductController implements ProductApi {
     @Override
     public ProductDto getProduct(String code) {
         log.info("Getting product with code {}", code);
-        return productService.getUser(code);
+        return productService.getProduct(code);
     }
 
     @Override

@@ -1,28 +1,35 @@
 package com.lab.homework6.service.service.impl;
 
 import com.lab.homework6.service.dto.ReportDto;
+import com.lab.homework6.service.exception.ReportNotFoundException;
 import com.lab.homework6.service.model.Report;
-import com.lab.homework6.service.repository.impl.ReportRepositoryImpl;
+import com.lab.homework6.service.repository.ReportRepository;
 import com.lab.homework6.service.service.ReportService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class ReportServiceImpl implements ReportService {
-    private final ReportRepositoryImpl reportRepository;
+    private final ReportRepository reportRepository;
 
     @Override
     public ReportDto getReport(Timestamp time) {
-        return mapReportToReportDto(reportRepository.getReport(time));
+        Report report = reportRepository.findByDate(time).orElseThrow(ReportNotFoundException::new);
+        log.info("Got Report from DB {}", report);
+        return mapReportToReportDto(report);
     }
 
     @Override
     public ReportDto createReport(ReportDto reportDto) {
         Report report = mapReportDtoToReport(reportDto);
-        return mapReportToReportDto(reportRepository.createReport(report));
+
+        mapReportToReportDto(reportRepository.save(report));
+        return null;
     }
 
     @Override

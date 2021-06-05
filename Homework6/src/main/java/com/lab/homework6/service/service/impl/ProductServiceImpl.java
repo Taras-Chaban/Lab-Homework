@@ -13,7 +13,7 @@ public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
 
     @Override
-    public ProductDto getUser(String code) {
+    public ProductDto getProduct(String code) {
         Product product = productRepository.getProduct(code);
         return mapProductToProductDto(product);
     }
