@@ -5,6 +5,7 @@ import com.cinemamicroservice.service.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -28,5 +29,19 @@ public class UserController {
     public User createUser(@RequestBody User user) {
         log.info("Creating user: {}", user);
         return userService.createUser(user);
+    }
+
+    @PutMapping(value = "/{email}")
+    @ResponseStatus(HttpStatus.OK)
+    public User updateUser(@PathVariable String email, @RequestBody User user) {
+        log.info("Updating user with email: {}", email);
+        return userService.updateUser(user, email);
+    }
+
+    @DeleteMapping(value = "/{email}")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<Void> deleteUser(@PathVariable String email) {
+        log.info("Deleting user with email: {}", email);
+        return userService.deleteUser(email);
     }
 }
